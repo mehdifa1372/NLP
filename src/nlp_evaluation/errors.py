@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
+from collections.abc import Sequence
 from dataclasses import dataclass
-from typing import Sequence
 
 import numpy as np
 from numpy.typing import ArrayLike
@@ -60,4 +60,3 @@ def rank_errors(
 
     errors.sort(key=lambda item: abs(item.score - threshold), reverse=True)
     return errors if top_k is None else errors[:top_k]
-
